@@ -7,10 +7,25 @@ function ready () {
     let strt = document.strt;
     let addition = document.addition;
     let i = 0
-
+    let timeSpent = 0
+    let time = document.createElement('time')
+    time.className = "timer"
+    time.innerHTML = "<h5>" + timeSpent + "</h5>"
 
     strt.onsubmit = function (e) {
         e.preventDefault();
+    }
+
+    function timer () {
+        document.body.append(time)
+        function count() {
+            timeSpent++;
+            document.body.prepend(time);
+            time.innerHTML = "<h2>" + timeSpent + "<h2>"
+            document.body.append(time)
+            console.log(timeSpent)
+        }
+        setTimeout(() => count(), 100);
     }
     
     add.onclick = function add() {
@@ -112,6 +127,7 @@ function ready () {
 
     }
     dvd.onclick = function dvd() {
+
         let ding = document.getElementById("ding");
         strt.classList.add("hidden")
         let dvdQuests = []
