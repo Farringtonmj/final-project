@@ -79,11 +79,24 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 30) {
+                    if (i < 29) {
                         add();
                     } else {
                         i = 0
-                        window.location.reload();
+                        let endTime = document.createElement('time')
+                        lastTime = timeSpent + m*60
+                        endTime.innerHTML = '<h1>Your time was ' + lastTime + ' seconds</h1>'
+                        time.classList.add("hidden")
+                        document.body.prepend(tryAgain)
+                        document.body.append(endTime)
+                        document.body.append(tryAgain)
+                        again.onsubmit = function (e) {
+                            e.preventDefault();
+                        }
+                        tryAgain.classList.remove("hidden");
+                        tryAgain.onclick = function() {
+                            window.location.reload();
+                        }
                     }
                     i++
                 }
@@ -125,11 +138,24 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 30) {
+                    if (i < 29) {
                         sbtrct();
                     } else {
                         i = 0
-                        window.location.reload();
+                        let endTime = document.createElement('time')
+                        lastTime = timeSpent + m*60
+                        endTime.innerHTML = '<h1>Your time was ' + lastTime + ' seconds</h1>'
+                        time.classList.add("hidden")
+                        document.body.prepend(tryAgain)
+                        document.body.append(endTime)
+                        document.body.append(tryAgain)
+                        again.onsubmit = function (e) {
+                            e.preventDefault();
+                        }
+                        tryAgain.classList.remove("hidden");
+                        tryAgain.onclick = function() {
+                            window.location.reload();
+                        }
                     }
                     i++
                 }
@@ -168,11 +194,24 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 30) {
+                    if (i < 29) {
                         mltply();
                     } else {
                         i = 0
-                        window.location.reload();
+                        let endTime = document.createElement('time')
+                        lastTime = timeSpent + m*60
+                        endTime.innerHTML = '<h1>Your time was ' + lastTime + ' seconds</h1>'
+                        time.classList.add("hidden")
+                        document.body.prepend(tryAgain)
+                        document.body.append(endTime)
+                        document.body.append(tryAgain)
+                        again.onsubmit = function (e) {
+                            e.preventDefault();
+                        }
+                        tryAgain.classList.remove("hidden");
+                        tryAgain.onclick = function() {
+                            window.location.reload();
+                        }
                     }
                     i++
                 }
@@ -218,19 +257,17 @@ function ready () {
                         dvd();
                     } else {
                         i = 0
-                        tryAgain.classList.remove("hidden");
-                        alert("h")
                         let endTime = document.createElement('time')
-                        if (endTime < 10) {
-                            endTime.innerHTML = '<h1>Your time was: ' + m + ':0' + timeSpent + ' seconds</h1>'
-                        } else {
-                            endTime.innerHTML = '<h1>Your time was: ' + m + ':' + timeSpent + ' seconds</h1>'
-                        }
+                        lastTime = timeSpent + m*60
+                        endTime.innerHTML = '<h1>Your time was ' + lastTime + ' seconds</h1>'
                         time.classList.add("hidden")
+                        document.body.prepend(tryAgain)
                         document.body.append(endTime)
+                        document.body.append(tryAgain)
                         again.onsubmit = function (e) {
                             e.preventDefault();
                         }
+                        tryAgain.classList.remove("hidden");
                         tryAgain.onclick = function() {
                             window.location.reload();
                         }
