@@ -8,6 +8,8 @@ function ready () {
     let addition = document.addition;
     let start = document.start.start;
     let startForm = document.start;
+    let tryAgain = document.again.tryAgain;
+    let again = document.again;
     let i = 0
     let m = 0;
     let n = 0
@@ -19,6 +21,7 @@ function ready () {
     strt.onsubmit = function (e) {
         e.preventDefault();
     }
+
     function timer () {
         document.body.append(time)
         function count() {
@@ -42,12 +45,6 @@ function ready () {
         if (i < 30) {
             //setInterval and setTimeout are things I learned in trying to make this timer
             setInterval(() => count(), 1000);
-        } else {
-            alert("h")
-            let endTime = document.createElement('time')
-            endTime.innerHTML = '<h1>Your time was: ' + timeSpent + ' seconds</h1>'
-            document.body.append(endTime)
-            // window.location.reload();
         }
     }
 
@@ -217,11 +214,26 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 2) {
+                    if (i < 30) {
                         dvd();
                     } else {
                         i = 0
-                        window.location.reload();
+                        tryAgain.classList.remove("hidden");
+                        alert("h")
+                        let endTime = document.createElement('time')
+                        if (endTime < 10) {
+                            endTime.innerHTML = '<h1>Your time was: ' + m + ':0' + timeSpent + ' seconds</h1>'
+                        } else {
+                            endTime.innerHTML = '<h1>Your time was: ' + m + ':' + timeSpent + ' seconds</h1>'
+                        }
+                        time.classList.add("hidden")
+                        document.body.append(endTime)
+                        again.onsubmit = function (e) {
+                            e.preventDefault();
+                        }
+                        tryAgain.onclick = function() {
+                            window.location.reload();
+                        }
                     }
 
                 }
