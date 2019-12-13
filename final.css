@@ -4,4 +4,29 @@
 
 .timer {
     text-align: right;
+    border: black;
+    margin-left: 95.5%;
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
 }
+
+.title {
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin-right: 99%; */
+  }
+
+  button:hover {
+      background-color: rgb(147, 236, 150);
+      color: black;
+  }

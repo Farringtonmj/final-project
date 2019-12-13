@@ -10,13 +10,14 @@ function ready () {
     let startForm = document.start;
     let tryAgain = document.again.tryAgain;
     let again = document.again;
+    console.log(top)
     let i = 0
     let m = 0;
     let n = 0
-    let timeSpent = 0
-    let time = document.createElement('time')
+    let timeSpent = 000
+    let time = document.createElement('h2')
     time.className = "timer"
-    time.innerHTML = "<h5>" + timeSpent + "</h5>"
+    time.innerHTML = "<h2>" + timeSpent + "</h2>"
 
     strt.onsubmit = function (e) {
         e.preventDefault();
@@ -79,24 +80,11 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 29) {
+                    if (i < 30) {
                         add();
                     } else {
                         i = 0
-                        let endTime = document.createElement('time')
-                        lastTime = timeSpent + m*60
-                        endTime.innerHTML = '<h1>Your time was ' + lastTime + ' seconds</h1>'
-                        time.classList.add("hidden")
-                        document.body.prepend(tryAgain)
-                        document.body.append(endTime)
-                        document.body.append(tryAgain)
-                        again.onsubmit = function (e) {
-                            e.preventDefault();
-                        }
-                        tryAgain.classList.remove("hidden");
-                        tryAgain.onclick = function() {
-                            window.location.reload();
-                        }
+                        window.location.reload();
                     }
                     i++
                 }
@@ -138,7 +126,7 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 29) {
+                    if (i < 30) {
                         sbtrct();
                     } else {
                         i = 0
@@ -156,12 +144,12 @@ function ready () {
                         tryAgain.onclick = function() {
                             window.location.reload();
                         }
+                         i++
                     }
-                    i++
                 }
             }
-        }
 
+        }
     }
     mltply.onclick = function() {
         timer();
@@ -194,7 +182,7 @@ function ready () {
                     this.value = ""
                     ding.play();
                     question.classList.add('hidden')
-                    if (i < 29) {
+                    if (i < 30) {
                         mltply();
                     } else {
                         i = 0
