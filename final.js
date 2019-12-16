@@ -10,10 +10,10 @@ function ready () {
     let startForm = document.start;
     let tryAgain = document.again.tryAgain;
     let again = document.again;
-    console.log(top)
     let i = 0
     let m = 0;
     let n = 0
+    let z = 0;
     let timeSpent = 000
     let time = document.createElement('h2')
     time.className = "timer"
@@ -41,7 +41,6 @@ function ready () {
             }
             
             document.body.append(time)
-            console.log(timeSpent)
         }
         if (i < 30) {
             //setInterval and setTimeout are things I learned in trying to make this timer
@@ -51,15 +50,17 @@ function ready () {
 
     
     add.onclick = function() {
-        timer();
         strt.classList.add("hidden")
-        console.log(start)
-        start.classList.remove("hidden")
+        startForm.classList.remove("hidden")
         startForm.onsubmit = function(e) {
             e.preventDefault();
         }
         start.onclick = function add() {
-            start.classList.add("hidden")
+            if (z < 1) {
+                timer();
+                z++
+            }
+            startForm.classList.add("hidden")
             let ding = document.getElementById("ding");
             strt.classList.add("hidden")
             let addQuests = []
@@ -69,7 +70,10 @@ function ready () {
             let number1 = Math.floor(Math.random() * 60);
             let number2 = Math.floor(Math.random() * 60);
             question.innerHTML = '<p>' + number1 + ' + ' + number2 + '</p>';
+            question.className = "question"
+            document.body.prepend(time);
             document.body.append(question);
+            document.body.append(time);
             inptbx.classList.remove("hidden")
             addition.onsubmit = function (e) {
                 e.preventDefault();
@@ -85,6 +89,7 @@ function ready () {
                     } else {
                         i = 0
                         window.location.reload();
+                        z = 0
                     }
                     i++
                 }
@@ -93,15 +98,17 @@ function ready () {
     }   
 
     sbtrct.onclick = function() {
-        timer();
         strt.classList.add("hidden")
-        console.log(start)
-        start.classList.remove("hidden")
+        startForm.classList.remove("hidden")
         startForm.onsubmit = function(e) {
             e.preventDefault();
         }
         start.onclick = function sbtrct() {
-            start.classList.add("hidden")
+            if (z < 1) {
+                timer();
+                z++
+            }
+            startForm.classList.add("hidden")
             let ding = document.getElementById("ding");
             strt.classList.add("hidden")
             let sbtrctQuests = []
@@ -116,7 +123,10 @@ function ready () {
                 number2 = Math.floor(Math.random() * 60);
             }
             question.innerHTML = '<p>' + number1 + ' - ' + number2 + '</p>';
+            question.className = "question"
+            document.body.prepend(time);
             document.body.append(question);
+            document.body.append(time);
             subtraction.onsubmit = function (e) {
                 e.preventDefault();
             }
@@ -143,6 +153,7 @@ function ready () {
                         tryAgain.classList.remove("hidden");
                         tryAgain.onclick = function() {
                             window.location.reload();
+                            z = 0;
                         }
                          i++
                     }
@@ -152,15 +163,17 @@ function ready () {
         }
     }
     mltply.onclick = function() {
-        timer();
         strt.classList.add("hidden")
-        console.log(start)
-        start.classList.remove("hidden")
+        startForm.classList.remove("hidden")
         startForm.onsubmit = function(e) {
             e.preventDefault();
         }
         start.onclick = function mltply() {
-            start.classList.add("hidden")
+            if (z < 1) {
+                timer();
+                z++
+            }
+            startForm.classList.add("hidden")
             document.body.append(time)
             let ding = document.getElementById("ding");
             strt.classList.add("hidden")
@@ -171,8 +184,11 @@ function ready () {
             let question = document.createElement('question');
             let number1 = Math.floor(Math.random() * 12);
             let number2 = Math.floor(Math.random() * 12);
+            question.className = "question"
             question.innerHTML = '<p>' + number1 + ' x ' + number2 + '</p>';
+            document.body.prepend(time);
             document.body.append(question);
+            document.body.append(time);
             multiplication.onsubmit = function (e) {
                 e.preventDefault();
             }
@@ -199,6 +215,7 @@ function ready () {
                         tryAgain.classList.remove("hidden");
                         tryAgain.onclick = function() {
                             window.location.reload();
+                            z = 0
                         }
                     }
                     i++
@@ -208,15 +225,17 @@ function ready () {
 
     }
     dvd.onclick = function() {
-        timer();
         strt.classList.add("hidden")
-        console.log(start)
-        start.classList.remove("hidden")
+        startForm.classList.remove("hidden")
         startForm.onsubmit = function(e) {
             e.preventDefault();
         }
         start.onclick = function dvd() {
-            start.classList.add("hidden")
+            if (z < 1) {
+                timer();
+                z++
+            }
+            startForm.classList.add("hidden")
             let ding = document.getElementById("ding");
             let dvdQuests = []
             dvdQuests.push(document.division.Q1)
@@ -230,7 +249,10 @@ function ready () {
                 number2 = Math.floor(Math.random() * 40);
             }
             question.innerHTML = '<p> ' + number1 + '/' + number2 + ' </p>';
+            question.className = "question"
+            document.body.prepend(time);
             document.body.append(question);
+            document.body.append(time);
             division.onsubmit = function (e) {
                 e.preventDefault();
             }
@@ -258,6 +280,7 @@ function ready () {
                         tryAgain.classList.remove("hidden");
                         tryAgain.onclick = function() {
                             window.location.reload();
+                            z = 0
                         }
                     }
 

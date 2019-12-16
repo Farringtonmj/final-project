@@ -22,11 +22,35 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    /* margin-right: 99%; */
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
   button:hover {
       background-color: rgb(147, 236, 150);
       color: black;
+  }
+
+  .question {
+    font-size: 20px;;
+  }
+
+  .special {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: black;
+    border-style: double;
+    color: rgb(0, 0, 0);
+    padding: 30px 64px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: wavy;
+    display: inline-block;
+    font-size: 27px;
+    margin-left: 45%;
+    margin-top: 100px;
+  }
+
+  .special:hover {
+    background-color: lightgrey;
+    color: black;
   }
