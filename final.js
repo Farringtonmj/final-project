@@ -92,6 +92,8 @@ function ready () {
                         z = 0
                     }
                     i++
+                } else {
+                    this.value = ""
                 }
             }
         }
@@ -157,6 +159,8 @@ function ready () {
                         }
                          i++
                     }
+                } else {
+                    this.value = ""
                 }
             }
 
@@ -219,6 +223,8 @@ function ready () {
                         }
                     }
                     i++
+                } else {
+                    this.value = ""
                 }
             }
         }
@@ -284,6 +290,8 @@ function ready () {
                         }
                     }
 
+                } else {
+                    this.value = ""
                 }
             }
         }
